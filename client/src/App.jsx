@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import "./App.scss";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { selectCurrentUser } from "./redux/user/user.selectors";
@@ -12,6 +11,8 @@ import Header from "./components/header/header.component.jsx";
 import SignInAndUpPage from "./pages/sign-in-up/sign-in-up.component.jsx";
 import CheckoutPage from "./pages/checkout/checkout.component.jsx";
 
+import { GlobalStyle } from "./global.styles";
+
 const App = ({ checkUserSession, currentUser }) => {
   useEffect(() => {
     checkUserSession();
@@ -19,6 +20,7 @@ const App = ({ checkUserSession, currentUser }) => {
 
   return (
     <div>
+      <GlobalStyle />
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
