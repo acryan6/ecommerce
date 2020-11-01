@@ -33,7 +33,7 @@ describe("CartDropdown component", () => {
   });
 
   it("should call history.push when button is clicked", () => {
-    wrapper.find("CustomButton").simulate("click");
+    wrapper.find("CartDropdownButton").simulate("click");
     expect(mockHistory.push).toHaveBeenCalled();
     expect(mockDispatch).toHaveBeenCalledWith(toggleCartHidden());
   });
@@ -50,6 +50,6 @@ describe("CartDropdown component", () => {
     };
 
     const newWrapper = shallow(<CartDropdown {...mockProps} />);
-    expect(newWrapper.exists("span")).toBe(true);
+    expect(newWrapper.exists("EmptyMessageContainer")).toBe(true);
   });
 });
