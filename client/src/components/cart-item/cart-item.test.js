@@ -4,5 +4,14 @@ import { shallow } from "enzyme";
 import CartItem from "./cart-item.component";
 
 describe("CartItem component", () => {
-  // let wrapper = shallow(<CartItem {...mockProps} />);
+  it("should render CartItem component", () => {
+    let mockItem = {
+      imageUrl: "mock.com",
+      price: 0.01,
+      name: "hats",
+      quantity: 101,
+    };
+
+    expect(shallow(<CartItem item={mockItem} />)).toMatchSnapshot();
+  });
 });
