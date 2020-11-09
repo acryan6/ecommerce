@@ -35,7 +35,7 @@ describe("formInput component", () => {
   it("should not render FormInputLabel if there is no label", () => {
     const mockProps = {
       label: "",
-      email: "user@gmail.com",
+      value: "user@gmail.com",
       handleChange: mockHandleChange,
     };
 
